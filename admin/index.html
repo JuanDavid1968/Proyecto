@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>GESTOR DE INVENTARIOS REMIND</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+</style>
+</head>
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-green w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-dispDIRECCIONESlay-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>GESTOR DE INVENTARIO<br>REMIND</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="login/index.php" class="w3-bar-item w3-button w3-hover-white">ADMIN USER</a>
+    <a href="articulos/index.php" class="w3-bar-item w3-button w3-hover-white">ARTICULOS</a>
+    <a href="bodega/index.php" class="w3-bar-item w3-button w3-hover-white">BODEGAS</a>
+    <a href="empleados/index.php" class="w3-bar-item w3-button w3-hover-white">USUARIOS</a>
+    <a href="cargo/index.php" class="w3-bar-item w3-button w3-hover-white">CARGOS</a>
+    <a href="direcciones/index.php" class="w3-bar-item w3-button w3-hover-white">DIRECCIONES</a>
+    <a href="telefonos/index.php" class="w3-bar-item w3-button w3-hover-white">TELEFONOS</a>
+    <a href="correos/index.php" class="w3-bar-item w3-button w3-hover-white">CORREOS</a>
+    <a href="salario/index.php" class="w3-bar-item w3-button w3-hover-white">NOMINA</a>
+    <a href="factura/index.php" class="w3-bar-item w3-button w3-hover-white">FACTURA</a>
+    <a href="stock/index.php" class="w3-bar-item w3-button w3-hover-white">STOCK ACTUALIZADO</a>
+    <a href="../login.php" class="w3-bar-item w3-button w3-hover-white">SIGN OUT</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-green w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-green w3-margin-right" onclick="w3_open()">☰</a>
+  <span>REMIND</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+  <!-- Services -->
+  <div class="w3-container" id="services" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-blue"><b>REMIND - Gestor de Inventarios</b></h1>
+    <hr style="width:50px;border:5px solid rgb(0, 30, 128)" class="w3-round">
+    <div>
+        <h5>Los inventarios en la actualidad han tenido un éxito empresarial, las empresas que manejan un sistema de inventarios organizado es una organización flexible operativamente, hoy en día esto permite que las empresas hagan una mayor gestión de pedidos, además hay una utilidad importante que ayuda dar agilidad en procesos de gestión de ítems.</h5>
+    </div>
+    <div>
+        <h5>El objetivo de este proyecto es dar un mejor enfoque y hacer más eficiente la gestión de inventarios por medio de una base de datos organizada y compacta, que nos permita administrar los movimientos en el inventario con unos pocos clics, optimizando así la actualización del stock en tiempo real de acuerdo con las entradas y salidas de productos.</h5>
+    </div>
+
+    <div>
+        <div class="w3-container" id="services" style="margin-top:75px">
+            <h1 class="w3-xxxlarge w3-text-blue"><b>REGISTROS DE ENTRADA DE INVENTARIO</b></h1>
+            <hr style="width:50px;border:5px solid rgb(0, 30, 128)" class="w3-round">
+            <div>
+
+    </div>
+    <div>
+        <h5>Acontinuación se encuentra un boton que lo direccionara a la tabla de ingreso de inventarios:</h5>
+
+    </div>
+    <div><center><a href="ingresoinventario/index.php" class="btn btn-success pull-center">INGRESO DE INVENTARIO</a></div></center></div>
+   
+    <p></p>
+    <div>
+        <div class="w3-container" id="services" style="margin-top:75px">
+            <h1 class="w3-xxxlarge w3-text-blue"><b>REGISTROS DE SALIDA DE INVENTARIO</b></h1>
+            <hr style="width:50px;border:5px solid rgb(0, 30, 128)" class="w3-round">
+            <div>
+
+    </div>
+    <div>
+        <h5>Acontinuación se encuentra un boton que lo direccionara a la tabla de salida de inventarios:</h5>
+
+    </div>
+
+    <div><center>
+
+    <a href="salidainventario/index.php" class="btn btn-success pull-center">SALIDA DE INVENTARIO</a></center></div>
+    <p></p>
+  </div>
+  
+
+</div>
+</body>
+</html>

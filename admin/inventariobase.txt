@@ -1,0 +1,114 @@
+CREATE TABLE bodega(
+id_bod INT NOT NULL AUTO_INCREMENT,
+direccion_bod VARCHAR(50),
+barrio_bod VARCHAR(20),
+ciudad_bod VARCHAR(20),
+pais_bod VARCHAR(50),
+PRIMARY KEY(id_bod));
+
+CREATE TABLE empleados(
+id_emp INT NOT NULL AUTO_INCREMENT, 
+nombre1_emp VARCHAR(50), 
+nombre2_emp VARCHAR(50),
+apellido1_emp VARCHAR(50), 
+apellido2_emp VARCHAR(50), 
+sexo_emp VARCHAR(20),
+fechanacim_emp DATE, 
+tipo_emp VARCHAR(50), 
+cedula_emp NUMERIC,
+id_bod INT NOT NULL, 
+PRIMARY KEY(id_emp), 
+CONSTRAINT fk_bod FOREIGN KEY(id_bod) REFERENCES bodega(id_bod)); 
+
+CREATE TABLE articulos(
+id_art INT NOT NULL AUTO_INCREMENT,
+nombre_art VARCHAR(20),
+tipo VARCHAR(20),
+descripcion_art TEXT(255),
+precio_art FLOAT,
+PRIMARY KEY(id_art));
+
+CREATE TABLE ingreso_inventario(
+id_inginv INT NOT NULL AUTO_INCREMENT, 
+id_art INT NOT NULL,  
+fechaingreso DATE, 
+horaingreso TIME,
+cantidad_inginv NUMERIC, 
+id_emp INT NOT NULL, 
+id_bod INT NOT NULL, 
+PRIMARY KEY(id_inginv),
+FOREIGN KEY(id_art) REFERENCES articulos(id_art),
+FOREIGN KEY(id_bod) REFERENCES bodega(id_bod));
+
+CREATE TABLE salida_inventario(
+id_salinv INT NOT NULL AUTO_INCREMENT,
+id_art INT NOT NULL,
+fechasalida DATE,
+horasalida TIME,
+razonsalida TEXT(255),
+cantidad_salinv NUMERIC,
+id_emp INT NOT NULL,
+id_bod INT NOT NULL,
+PRIMARY KEY (id_salinv),
+FOREIGN KEY(id_art) REFERENCES articulos(id_art),
+FOREIGN KEY(id_bod) REFERENCES bodega(id_bod));	
+
+CREATE TABLE telefonos(
+id_tel INT NOT NULL AUTO_INCREMENT,
+id_emp INT NOT NULL,
+telefono NUMERIC(25),
+PRIMARY KEY(id_tel),
+FOREIGN KEY(id_emp) REFERENCES empleados(id_emp));
+
+CREATE TABLE direcciones(
+id_dir INT NOT NULL AUTO_INCREMENT,
+id_emp INT NOT NULL,
+direccion VARCHAR(100),
+PRIMARY KEY(id_dir),
+FOREIGN KEY(id_emp) REFERENCES empleados(id_emp));
+
+CREATE TABLE correos(
+id_cor INT NOT NULL AUTO_INCREMENT,
+id_emp INT NOT NULL,
+correo VARCHAR(100),
+PRIMARY KEY(id_cor),
+FOREIGN KEY(id_emp) REFERENCES empleados(id_emp));
+
+CREATE TABLE cargo(
+id_car INT NOT NULL AUTO_INCREMENT,
+id_emp INT NOT NULL,
+nombre_car VARCHAR(50),
+funciones_car TEXT(255),
+privilegios_car TEXT(255),
+PRIMARY KEY(id_car),
+FOREIGN KEY(id_emp) REFERENCES empleados(id_emp));
+
+CREATE TABLE salario(
+id_sal INT NOT NULL AUTO_INCREMENT,
+id_emp INT NOT NULL,
+numerocuenta NUMERIC(25),
+banco VARCHAR(50),
+salariobase NUMERIC(50),
+auxiliotransporte NUMERIC(50),
+descuentosalud FLOAT,
+descuentopension FLOAT,
+PRIMARY KEY(id_sal),
+FOREIGN KEY(id_emp)REFERENCES empleados(id_emp));
+
+CREATE TABLE login(
+id_log INT NOT NULL AUTO_INCREMENT, 
+user_log VARCHAR(50), 
+password_log VARCHAR(50),
+id_emp INT NOT NULL, 
+PRIMARY KEY(id_log), 
+FOREIGN KEY(id_emp)REFERENCES empleados(id_emp)); 
+
+CREATE TABLE factura (
+id_fact int(11) NOT NULL AUTO_INCREMENT,
+id_art int(11) NOT NULL,
+fecha_fact DATE NOT NULL,
+id_emp int(11) NOT NULL,
+cantidad int(11) DEFAULT NULL,
+precio_fac int(11) DEFAULT NULL,
+PRIMARY KEY(id_fact), 
+FOREIGN KEY(id_emp)REFERENCES empleados(id_emp)); 
